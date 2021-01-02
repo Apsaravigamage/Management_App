@@ -13,6 +13,7 @@ namespace Management_App
     public partial class Form1 : Form
     {
         int inEmpID = 0;
+        bool isDefaultImage = true;
         public Form1()
         {
             InitializeComponent();
@@ -29,6 +30,7 @@ namespace Management_App
 
         private void btnReset_Click(object sender, EventArgs e)
         {
+            Clear();
 
         }
 
@@ -45,11 +47,18 @@ namespace Management_App
             inEmpID = 0;
             btnSave.Text = "Save";
             btnDelete.Enabled = false;
+            pbxPhoto.Image = Image.FromFile(Application.StartupPath + "\\Images\\defaultImage.jpg");
+            isDefaultImage = true;
         }
 
         private void cmbPosition_SelectedIndexChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+            Clear();
         }
     }
 }

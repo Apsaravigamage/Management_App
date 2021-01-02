@@ -1,0 +1,10 @@
+C:\Users\Apsaravi\Documents\Management_App\Management_App\bin\Debug\Management_App.exe.config
+C:\Users\Apsaravi\Documents\Management_App\Management_App\bin\Debug\Management_App.exe
+C:\Users\Apsaravi\Documents\Management_App\Management_App\bin\Debug\Management_App.pdb
+C:\Users\Apsaravi\Documents\Management_App\Management_App\obj\Debug\Management_App.csprojAssemblyReference.cache
+C:\Users\Apsaravi\Documents\Management_App\Management_App\obj\Debug\Management_App.Form1.resources
+C:\Users\Apsaravi\Documents\Management_App\Management_App\obj\Debug\Management_App.Properties.Resources.resources
+C:\Users\Apsaravi\Documents\Management_App\Management_App\obj\Debug\Management_App.csproj.GenerateResource.cache
+C:\Users\Apsaravi\Documents\Management_App\Management_App\obj\Debug\Management_App.csproj.CoreCompileInputs.cache
+C:\Users\Apsaravi\Documents\Management_App\Management_App\obj\Debug\Management_App.exe
+C:\Users\Apsaravi\Documents\Management_App\Management_App\obj\Debug\Management_App.pdb
