@@ -33,7 +33,7 @@ namespace Management_App
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.txtEmpCode = new System.Windows.Forms.TextBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.txtEmpName = new System.Windows.Forms.TextBox();
             this.cmbPosition = new System.Windows.Forms.ComboBox();
             this.dtpDOB = new System.Windows.Forms.DateTimePicker();
             this.label1 = new System.Windows.Forms.Label();
@@ -96,7 +96,7 @@ namespace Management_App
             this.tabPage2.Controls.Add(this.label1);
             this.tabPage2.Controls.Add(this.dtpDOB);
             this.tabPage2.Controls.Add(this.cmbPosition);
-            this.tabPage2.Controls.Add(this.textBox1);
+            this.tabPage2.Controls.Add(this.txtEmpName);
             this.tabPage2.Controls.Add(this.txtEmpCode);
             this.tabPage2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tabPage2.Location = new System.Drawing.Point(4, 22);
@@ -126,12 +126,12 @@ namespace Management_App
             this.txtEmpCode.Size = new System.Drawing.Size(213, 22);
             this.txtEmpCode.TabIndex = 0;
             // 
-            // textBox1
+            // txtEmpName
             // 
-            this.textBox1.Location = new System.Drawing.Point(168, 71);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(213, 22);
-            this.textBox1.TabIndex = 1;
+            this.txtEmpName.Location = new System.Drawing.Point(168, 71);
+            this.txtEmpName.Name = "txtEmpName";
+            this.txtEmpName.Size = new System.Drawing.Size(213, 22);
+            this.txtEmpName.TabIndex = 1;
             // 
             // cmbPosition
             // 
@@ -140,6 +140,7 @@ namespace Management_App
             this.cmbPosition.Name = "cmbPosition";
             this.cmbPosition.Size = new System.Drawing.Size(213, 24);
             this.cmbPosition.TabIndex = 2;
+            this.cmbPosition.SelectedIndexChanged += new System.EventHandler(this.cmbPosition_SelectedIndexChanged);
             // 
             // dtpDOB
             // 
@@ -320,6 +321,7 @@ namespace Management_App
             this.btnReset.TabIndex = 96;
             this.btnReset.Text = "Reset";
             this.btnReset.UseVisualStyleBackColor = true;
+            this.btnReset.Click += new System.EventHandler(this.btnReset_Click);
             // 
             // dataGridView2
             // 
@@ -381,7 +383,7 @@ namespace Management_App
 
         private System.Windows.Forms.TabControl tabControl1;
         private System.Windows.Forms.TabPage tabPage2;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox txtEmpName;
         private System.Windows.Forms.TextBox txtEmpCode;
         private System.Windows.Forms.TabPage tabPage1;
         private System.Windows.Forms.Button btnImageClear;
