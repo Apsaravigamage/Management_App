@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Data.SqlClient;
 
 namespace Management_App
 {
@@ -14,6 +15,7 @@ namespace Management_App
     {
         int inEmpID = 0;
         bool isDefaultImage = true;
+        String strConnectionString = @"Data Source=DESKTOP-LGPAMQA;Initial Catalog=EmployeeDB;Integrated Security=True";
         public Form1()
         {
             InitializeComponent();
@@ -43,7 +45,7 @@ namespace Management_App
             if (dgvEmpCompany.DataSource == null)
                 dgvEmpCompany.Rows.Clear();
             else
-                dgvEmpCompany.DataSource = (dgvEmpCompany.DataSource as DataTable).Clone();
+                dgvcmbPosition.DataSource = (dgvcmbPosition.DataSource as DataTable).Clone();
             inEmpID = 0;
             btnSave.Text = "Save";
             btnDelete.Enabled = false;
@@ -58,7 +60,33 @@ namespace Management_App
 
         private void Form1_Load(object sender, EventArgs e)
         {
+            PositionComboBoxFill();
             Clear();
+        }
+
+        void PositionComboBoxFill()
+        {
+            using (SqlConnection sqlCon = new SqlConnection(strConnectionString))
+            {
+                sqlCon.Open();
+                SqlDataAdapter sqlDa = new SqlDataAdapter("SELECT * FROM Position", sqlCon);
+                DataTable dtbl = new DataTable();
+                sqlDa.Fill(dtbl);
+                DataRow topItem = dtbl.NewRow();
+                topItem[0] = 0;
+                topItem[1] = "-Select-";
+                dtbl.Rows.InsertAt(topItem, 0);
+                cmbPosition.ValueMember = dgvcmbPosition.ValueMember = "PositionID";
+                cmbPosition.DisplayMember = dgvcmbPosition.DisplayMember = "Position";
+                cmbPosition.DataSource = dtbl;
+                dgvcmbPosition.DataSource = dtbl.Copy();
+
+            }
+        }
+
+        private void dgvEmpCompany_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
         }
     }
 }
