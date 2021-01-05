@@ -56,13 +56,13 @@ namespace Management_App
             this.txtEmpName = new System.Windows.Forms.TextBox();
             this.txtEmpCode = new System.Windows.Forms.TextBox();
             this.tabPage1 = new System.Windows.Forms.TabPage();
-            this.dataGridView2 = new System.Windows.Forms.DataGridView();
+            this.dgvEmployee = new System.Windows.Forms.DataGridView();
             this.tabControl1.SuspendLayout();
             this.tabPage2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvEmpCompany)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbxPhoto)).BeginInit();
             this.tabPage1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvEmployee)).BeginInit();
             this.SuspendLayout();
             // 
             // tabControl1
@@ -178,6 +178,7 @@ namespace Management_App
             this.btnSave.TabIndex = 94;
             this.btnSave.Text = "Save";
             this.btnSave.UseVisualStyleBackColor = true;
+            this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
             // 
             // btnImageClear
             // 
@@ -188,6 +189,7 @@ namespace Management_App
             this.btnImageClear.TabIndex = 92;
             this.btnImageClear.Text = "Clear";
             this.btnImageClear.UseVisualStyleBackColor = true;
+            this.btnImageClear.Click += new System.EventHandler(this.btnImageClear_Click);
             // 
             // btnImageBrowse
             // 
@@ -342,7 +344,7 @@ namespace Management_App
             // 
             // tabPage1
             // 
-            this.tabPage1.Controls.Add(this.dataGridView2);
+            this.tabPage1.Controls.Add(this.dgvEmployee);
             this.tabPage1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tabPage1.Location = new System.Drawing.Point(4, 22);
             this.tabPage1.Name = "tabPage1";
@@ -352,16 +354,16 @@ namespace Management_App
             this.tabPage1.Text = "Employee Register";
             this.tabPage1.UseVisualStyleBackColor = true;
             // 
-            // dataGridView2
+            // dgvEmployee
             // 
-            this.dataGridView2.AllowUserToAddRows = false;
-            this.dataGridView2.AllowUserToDeleteRows = false;
-            this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView2.Location = new System.Drawing.Point(18, 18);
-            this.dataGridView2.Name = "dataGridView2";
-            this.dataGridView2.ReadOnly = true;
-            this.dataGridView2.Size = new System.Drawing.Size(640, 276);
-            this.dataGridView2.TabIndex = 0;
+            this.dgvEmployee.AllowUserToAddRows = false;
+            this.dgvEmployee.AllowUserToDeleteRows = false;
+            this.dgvEmployee.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvEmployee.Location = new System.Drawing.Point(18, 18);
+            this.dgvEmployee.Name = "dgvEmployee";
+            this.dgvEmployee.ReadOnly = true;
+            this.dgvEmployee.Size = new System.Drawing.Size(640, 276);
+            this.dgvEmployee.TabIndex = 0;
             // 
             // Form1
             // 
@@ -379,7 +381,7 @@ namespace Management_App
             ((System.ComponentModel.ISupportInitialize)(this.dgvEmpCompany)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbxPhoto)).EndInit();
             this.tabPage1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvEmployee)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -408,7 +410,7 @@ namespace Management_App
         private System.Windows.Forms.Button btnReset;
         private System.Windows.Forms.Button btnDelete;
         private System.Windows.Forms.Button btnSave;
-        private System.Windows.Forms.DataGridView dataGridView2;
+        private System.Windows.Forms.DataGridView dgvEmployee;
         private System.Windows.Forms.DataGridView dgvEmpCompany;
         private System.Windows.Forms.DataGridViewTextBoxColumn EmpCompID;
         private System.Windows.Forms.DataGridViewTextBoxColumn dgvtxtCompanyName;
