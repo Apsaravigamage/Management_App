@@ -31,6 +31,11 @@ namespace Management_App
         {
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.dgvEmpCompany = new System.Windows.Forms.DataGridView();
+            this.EmpCompID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dgvtxtCompanyName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dgvcmbPosition = new System.Windows.Forms.DataGridViewComboBoxColumn();
+            this.dgvtxtYear = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.btnReset = new System.Windows.Forms.Button();
             this.btnDelete = new System.Windows.Forms.Button();
             this.btnSave = new System.Windows.Forms.Button();
@@ -52,17 +57,12 @@ namespace Management_App
             this.txtEmpCode = new System.Windows.Forms.TextBox();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.dataGridView2 = new System.Windows.Forms.DataGridView();
-            this.dgvEmpCompany = new System.Windows.Forms.DataGridView();
-            this.EmpCompID = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dgvtxtCompanyName = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dgvcmbPosition = new System.Windows.Forms.DataGridViewComboBoxColumn();
-            this.dgvtxtYear = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tabControl1.SuspendLayout();
             this.tabPage2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvEmpCompany)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbxPhoto)).BeginInit();
             this.tabPage1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvEmpCompany)).BeginInit();
             this.SuspendLayout();
             // 
             // tabControl1
@@ -106,6 +106,47 @@ namespace Management_App
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Employee Details";
             this.tabPage2.Click += new System.EventHandler(this.tabPage2_Click);
+            // 
+            // dgvEmpCompany
+            // 
+            this.dgvEmpCompany.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvEmpCompany.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.EmpCompID,
+            this.dgvtxtCompanyName,
+            this.dgvcmbPosition,
+            this.dgvtxtYear});
+            this.dgvEmpCompany.Location = new System.Drawing.Point(45, 281);
+            this.dgvEmpCompany.Name = "dgvEmpCompany";
+            this.dgvEmpCompany.Size = new System.Drawing.Size(590, 81);
+            this.dgvEmpCompany.TabIndex = 97;
+            // 
+            // EmpCompID
+            // 
+            this.EmpCompID.DataPropertyName = "EmpCmpID";
+            this.EmpCompID.HeaderText = "EmpCompID";
+            this.EmpCompID.Name = "EmpCompID";
+            this.EmpCompID.Visible = false;
+            // 
+            // dgvtxtCompanyName
+            // 
+            this.dgvtxtCompanyName.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.dgvtxtCompanyName.DataPropertyName = "CompanyName";
+            this.dgvtxtCompanyName.HeaderText = "Company Name";
+            this.dgvtxtCompanyName.Name = "dgvtxtCompanyName";
+            // 
+            // dgvcmbPosition
+            // 
+            this.dgvcmbPosition.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.dgvcmbPosition.DataPropertyName = "PositionID";
+            this.dgvcmbPosition.HeaderText = "Position";
+            this.dgvcmbPosition.Name = "dgvcmbPosition";
+            this.dgvcmbPosition.Width = 70;
+            // 
+            // dgvtxtYear
+            // 
+            this.dgvtxtYear.DataPropertyName = "ExpYear";
+            this.dgvtxtYear.HeaderText = "Year";
+            this.dgvtxtYear.Name = "dgvtxtYear";
             // 
             // btnReset
             // 
@@ -157,6 +198,7 @@ namespace Management_App
             this.btnImageBrowse.TabIndex = 91;
             this.btnImageBrowse.Text = "Browse";
             this.btnImageBrowse.UseVisualStyleBackColor = true;
+            this.btnImageBrowse.Click += new System.EventHandler(this.btnImageBrowse_Click);
             // 
             // pbxPhoto
             // 
@@ -321,47 +363,6 @@ namespace Management_App
             this.dataGridView2.Size = new System.Drawing.Size(640, 276);
             this.dataGridView2.TabIndex = 0;
             // 
-            // dgvEmpCompany
-            // 
-            this.dgvEmpCompany.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvEmpCompany.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.EmpCompID,
-            this.dgvtxtCompanyName,
-            this.dgvcmbPosition,
-            this.dgvtxtYear});
-            this.dgvEmpCompany.Location = new System.Drawing.Point(45, 281);
-            this.dgvEmpCompany.Name = "dgvEmpCompany";
-            this.dgvEmpCompany.Size = new System.Drawing.Size(590, 81);
-            this.dgvEmpCompany.TabIndex = 97;
-            // 
-            // EmpCompID
-            // 
-            this.EmpCompID.DataPropertyName = "EmpCmpID";
-            this.EmpCompID.HeaderText = "EmpCompID";
-            this.EmpCompID.Name = "EmpCompID";
-            this.EmpCompID.Visible = false;
-            // 
-            // dgvtxtCompanyName
-            // 
-            this.dgvtxtCompanyName.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.dgvtxtCompanyName.DataPropertyName = "CompanyName";
-            this.dgvtxtCompanyName.HeaderText = "Company Name";
-            this.dgvtxtCompanyName.Name = "dgvtxtCompanyName";
-            // 
-            // dgvcmbPosition
-            // 
-            this.dgvcmbPosition.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.dgvcmbPosition.DataPropertyName = "PositionID";
-            this.dgvcmbPosition.HeaderText = "Position";
-            this.dgvcmbPosition.Name = "dgvcmbPosition";
-            this.dgvcmbPosition.Width = 70;
-            // 
-            // dgvtxtYear
-            // 
-            this.dgvtxtYear.DataPropertyName = "ExpYear";
-            this.dgvtxtYear.HeaderText = "Year";
-            this.dgvtxtYear.Name = "dgvtxtYear";
-            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -375,10 +376,10 @@ namespace Management_App
             this.tabControl1.ResumeLayout(false);
             this.tabPage2.ResumeLayout(false);
             this.tabPage2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvEmpCompany)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbxPhoto)).EndInit();
             this.tabPage1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvEmpCompany)).EndInit();
             this.ResumeLayout(false);
 
         }

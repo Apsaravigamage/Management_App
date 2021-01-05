@@ -15,7 +15,8 @@ namespace Management_App
     {
         int inEmpID = 0;
         bool isDefaultImage = true;
-        String strConnectionString = @"Data Source=DESKTOP-LGPAMQA;Initial Catalog=EmployeeDB;Integrated Security=True";
+        String strConnectionString = @"Data Source=DESKTOP-LGPAMQA;Initial Catalog=EmployeeDB;Integrated Security=True", strPreviousImage = "";
+        OpenFileDialog ofd = new OpenFileDialog();
         public Form1()
         {
             InitializeComponent();
@@ -87,6 +88,17 @@ namespace Management_App
         private void dgvEmpCompany_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
 
+        }
+
+        private void btnImageBrowse_Click(object sender, EventArgs e)
+        {
+            ofd.Filter = "Images(.jpg,.png)|*.png;*.jpg";
+            if(ofd.ShowDialog()==DialogResult.OK)
+            {
+                pbxPhoto.Image = new Bitmap(ofd.FileName);
+                isDefaultImage = false;
+                strPreviousImage = ""; 
+            }
         }
     }
 }
