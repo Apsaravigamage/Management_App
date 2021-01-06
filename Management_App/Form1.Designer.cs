@@ -119,6 +119,7 @@ namespace Management_App
             this.dgvEmpCompany.Name = "dgvEmpCompany";
             this.dgvEmpCompany.Size = new System.Drawing.Size(590, 81);
             this.dgvEmpCompany.TabIndex = 97;
+            this.dgvEmpCompany.UserDeletingRow += new System.Windows.Forms.DataGridViewRowCancelEventHandler(this.dgvEmpCompany_UserDeletingRow);
             // 
             // EmpCompID
             // 
@@ -168,6 +169,7 @@ namespace Management_App
             this.btnDelete.TabIndex = 95;
             this.btnDelete.Text = "Delete";
             this.btnDelete.UseVisualStyleBackColor = true;
+            this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
             // 
             // btnSave
             // 

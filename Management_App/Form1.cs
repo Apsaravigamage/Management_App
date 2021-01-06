@@ -242,6 +242,46 @@ namespace Management_App
             }
         }
 
+        private void dgvEmpCompany_UserDeletingRow(object sender, DataGridViewRowCancelEventArgs e)
+        {
+            DataGridViewRow dgvRow = dgvEmpCompany.CurrentRow;
+            if (dgvRow.Cells["dgvtxtEmpCompID"].Value != DBNull.Value)
+            {
+                if (MessageBox.Show("Are you sure to delete this Record ?", "Management App", MessageBoxButtons.YesNo) == DialogResult.Yes)
+                {
+                    using (SqlConnection sqlCon = new SqlConnection(strConnectionString))
+                    {
+                        sqlCon.Open();
+                        SqlCommand sqlCmd = new SqlCommand("EmpCompanyDelete", sqlCon);
+                        sqlCmd.CommandType = CommandType.StoredProcedure;
+                        sqlCmd.Parameters.AddWithValue("@EmpCmpID", Convert.ToInt32(dgvRow.Cells["dgvtxtEmpConpID"].Value));
+                        sqlCmd.ExecuteNonQuery();
+                    }
+                }
+                else
+                    e.Cancel = true;
+
+            }
+        }
+
+        private void btnDelete_Click(object sender, EventArgs e)
+        {
+            if (MessageBox.Show("Are you sure to Delete this record ? ", "Management App", MessageBoxButtons.YesNo) == DialogResult.OK)
+            {
+                using (SqlConnection sqlCon = new SqlConnection(strConnectionString))
+                {
+                    sqlCon.Open();
+                    SqlCommand sqlCmd = new SqlCommand("EmployeeDelete", sqlCon);
+                    sqlCmd.CommandType = CommandType.StoredProcedure;
+                    sqlCmd.Parameters.AddWithValue("@EmpID", inEmpID);
+                    sqlCmd.ExecuteNonQuery();
+                    Clear();
+                    FillEmployeeDataGridView();
+                    MessageBox.Show("Deleted Successfully");
+                }
+            }
+        }
+
         private void btnImageBrowse_Click(object sender, EventArgs e)
         {
             ofd.Filter = "Images(.jpg,.png)|*.png;*.jpg";
