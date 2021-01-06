@@ -364,6 +364,7 @@ namespace Management_App
             this.dgvEmployee.ReadOnly = true;
             this.dgvEmployee.Size = new System.Drawing.Size(640, 276);
             this.dgvEmployee.TabIndex = 0;
+            this.dgvEmployee.DoubleClick += new System.EventHandler(this.dgvEmployee_DoubleClick);
             // 
             // Form1
             // 
